@@ -1,1 +1,1 @@
-include 'hrm-core'
+include 'hrm-core', 'hrm-server', 'hrm-web'
