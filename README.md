@@ -10,12 +10,12 @@ Human Resource Management System
 
 ##### Windows
 
-* run <code>gradlew.bat eclipse</code> build
+* run <code>gradlew.bat eclipse build</code>
 * import projects to workspace
 
 ##### Linux
 
-* run <code>gradlew eclipse build</code> build
+* run <code>gradlew eclipse build</code>
 * import projects to workspace
 
 
