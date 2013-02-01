@@ -1,3 +1,5 @@
+apply plugin: 'sonar'
+
 ext {
 	gradleWrapperVersion = '1.4';
 }
@@ -21,4 +23,21 @@ subprojects {
 
 task wrapper(type: Wrapper) {
 	gradleVersion = gradleWrapperVersion;
+}
+
+sonar {
+	server {
+		url = "http://192.168.12.2:8080/sonar"
+	}
+
+	database {
+		url = "jdbc:mysql://192.168.12.2/sonar"
+		driverClassName = "com.mysql.jdbc.Driver"
+		username = "sonar"
+		password = "sonar"
+	}
+
+	project {
+		name = "GS HRM"
+	}
 }
