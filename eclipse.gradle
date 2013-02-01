@@ -22,6 +22,7 @@ task eclipseJdtPrepare(type: Copy) {
 tasks["eclipseJdt"].dependsOn(eclipseGradle)
 tasks["eclipseJdt"].dependsOn(eclipseJdtPrepare)
 tasks["cleanEclipse"].dependsOn(cleanEclipseJdtUi)
+tasks["eclipse"].dependsOn(cleanEclipse)
 
 eclipse {
 	project {
