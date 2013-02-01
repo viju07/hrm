@@ -1,2 +1,7 @@
 # gradlew storage
 .gradle
+
+# eclipse preferences
+*/.project
+*/.classpath
+*/.settings

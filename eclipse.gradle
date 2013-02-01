@@ -1,0 +1,47 @@
+apply plugin: 'eclipse'
+
+
+task cleanEclipseJdtUi(type: Delete) {
+	delete project.file('.settings');	
+}
+
+task eclipseGradle(type: Copy) {	
+	from rootProject.files('.prefs/gradle') {
+		include '*'
+	}
+	into project.file('.settings/gradle')
+}
+
+task eclipseJdtPrepare(type: Copy) {
+	from rootProject.files('.prefs') {
+		include '*.prefs'
+	}
+	into project.file('.settings/')
+}
+
+tasks["eclipseJdt"].dependsOn(eclipseGradle)
+tasks["eclipseJdt"].dependsOn(eclipseJdtPrepare)
+tasks["cleanEclipse"].dependsOn(cleanEclipseJdtUi)
+
+eclipse {
+	project {
+		natures 'org.springsource.ide.eclipse.gradle.core.nature', 
+				'org.eclipse.jdt.groovy.core.groovyNature'
+	}
+	classpath {
+		file {
+			withXml {
+				def node = it.asNode()
+				node.appendNode('classpathentry', [kind: 'output', path: 'build'])
+				node.appendNode('classpathentry', [kind: 'con', path: 'GROOVY_DSL_SUPPORT'])
+				node.appendNode('classpathentry', [kind: 'con', path: 'GROOVY_SUPPORT'])
+				node.appendNode('classpathentry', [kind: 'con', path: 'org.springsource.ide.eclipse.gradle.classpathcontainer'])
+				node.appendNode('classpathentry', [kind: 'con', path: 'org.springsource.ide.eclipse.gradle.dsld.classpathcontainer'])
+			}
+		}
+	}
+	
+	ext.downloadSources = true
+	ext.downloadJavadoc = true
+}
+
