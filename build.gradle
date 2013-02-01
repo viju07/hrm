@@ -1,0 +1,8 @@
+ext {
+	gradleWrapperVersion = '1.4';
+}
+
+
+task wrapper(type: Wrapper) {
+	gradleVersion = gradleWrapperVersion;
+}
