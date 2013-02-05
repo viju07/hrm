@@ -2,6 +2,8 @@ apply plugin: 'sonar'
 
 ext {
 	gradleWrapperVersion = '1.4';
+	
+	springVersion = '3.2.1.RELEASE'
 }
 
 group = 'com.gersis-software'
