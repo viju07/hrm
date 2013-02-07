@@ -1,0 +1,10 @@
+dependencies {
+    compile "commons-collections:commons-collections:$commonsCollectionsVersion"
+    compile "org.apache.commons:commons-lang3:$commonsLangVersion"
+    compile "org.springframework.data:spring-data-jpa:$springJpaVersion"
+    
+    testCompile "org.mockito:mockito-all:$mockitoVersion"
+    testCompile "junit:junit:$junitVersion"
+    testCompile "org.springframework:spring-test:$springVersion"
+    
+}
