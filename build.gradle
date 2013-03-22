@@ -1,7 +1,7 @@
 apply plugin: 'sonar-runner'
 
 ext {
-	gradleWrapperVersion = '1.4';
+	gradleWrapperVersion = '1.5-rc-3';
 	
 	springVersion = '3.2.1.RELEASE'
 	springJpaVersion = '1.2.0.RELEASE'
