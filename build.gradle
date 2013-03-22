@@ -1,16 +1,5 @@
 apply plugin: 'sonar-runner'
 
-ext {
-	gradleWrapperVersion = '1.5-rc-3';
-	
-	springVersion = '3.2.1.RELEASE'
-	springJpaVersion = '1.2.0.RELEASE'
-	commonsCollectionsVersion = '3.2.1'
-    commonsLangVersion = '3.1'
-    mockitoVersion = '1.9.5'
-    junitVersion = '4.11'
-}
-
 group = 'com.gersis-software'
 version = '0.1.0-SNAPSHOT'
 
@@ -40,5 +29,20 @@ sonarRunner {
 		property "sonar.username", "sonar"
 		property "sonar.password", "sonar"
 		property "sonar.projectName", "GS HRM"
+	}
+}
+
+buildscript {
+	repositories {
+		mavenCentral()
+		
+		maven {
+			url 'http://192.168.12.46:8080/artifactory/libs-release'
+		}
+	}
+	
+	dependencies {
+		classpath group: "mysql", 				 name: "mysql-connector-java", version: mysqlConnectorVersion
+		classpath group: "com.github.ben-manes", name: "gradle-flyway-plugin", version: gradleFlywayVersion
 	}
 }

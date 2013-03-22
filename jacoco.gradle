@@ -8,8 +8,8 @@ def jacocoAgent = "org.jacoco.agent-${jacocoVersion}.jar"
 configurations { jacoco } 
 
 dependencies {
-  jacoco "org.jacoco:org.jacoco.agent:$jacocoVersion"
-  jacoco "org.jacoco:org.jacoco.ant:$jacocoVersion"
+  jacoco group: "org.jacoco", name: "org.jacoco.agent", version: jacocoVersion
+  jacoco group: "org.jacoco", name: "org.jacoco.ant",	version: jacocoVersion
 }
 
 

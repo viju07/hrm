@@ -1,10 +1,12 @@
+apply plugin: "flyway"
+
 dependencies {
-    compile "commons-collections:commons-collections:$commonsCollectionsVersion"
-    compile "org.apache.commons:commons-lang3:$commonsLangVersion"
-    compile "org.springframework.data:spring-data-jpa:$springJpaVersion"
+    compile group: "commons-collections", 		name: "commons-collections", 	version: commonsCollectionsVersion
+    compile group: "org.apache.commons",		name: "commons-lang3", 			version: commonsLangVersion
+    compile group: "org.springframework.data",	name: "spring-data-jpa",		version: springJpaVersion
     
-    testCompile "org.mockito:mockito-all:$mockitoVersion"
-    testCompile "junit:junit:$junitVersion"
-    testCompile "org.springframework:spring-test:$springVersion"
+    testCompile group: "org.mockito", 			name: "mockito-all", 	version: mockitoVersion
+    testCompile group: "junit",					name: "junit", 			version: junitVersion
+    testCompile group: "org.springframework",	name: "spring-test",	version: springVersionS
     
 }
