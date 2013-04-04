@@ -7,6 +7,6 @@ dependencies {
     
     testCompile group: "org.mockito", 			name: "mockito-all", 	version: mockitoVersion
     testCompile group: "junit",					name: "junit", 			version: junitVersion
-    testCompile group: "org.springframework",	name: "spring-test",	version: springVersionS
+    testCompile group: "org.springframework",	name: "spring-test",	version: springVersion
     
 }

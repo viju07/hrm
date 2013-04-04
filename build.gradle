@@ -1,8 +1,5 @@
 apply plugin: 'sonar-runner'
 
-group = 'com.gersis-software'
-version = '0.1.0-SNAPSHOT'
-
 subprojects {
 	apply plugin: 'java'
 	apply from: "${rootProject.projectDir}/eclipse.gradle"
@@ -10,6 +7,7 @@ subprojects {
 
 	repositories {
 		mavenCentral()
+		maven { url 'http://192.168.12.46:8080/artifactory/repo' }
 	}
 
 	sourceCompatibility = 1.7
@@ -37,7 +35,7 @@ buildscript {
 		mavenCentral()
 		
 		maven {
-			url 'http://192.168.12.46:8080/artifactory/libs-release'
+			url 'http://192.168.12.46:8080/artifactory/repo'
 		}
 	}
 	

@@ -1,5 +1,6 @@
 dependencies {
 	compile project(':hrm-server')
 	
-	compile "org.springframework:spring-webmvc:$springVersion"
+	compile group: 'org.springframework',	name: 'spring-webmvc', 		version: springVersion
+	compile group: 'com.gersis-software',	name: 'bugtracer-spring',	version: bugtracerVersion
 }
